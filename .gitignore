@@ -2,8 +2,10 @@
 *.log
 
 .idea
+.java-version
 
-*/target
+target/
+
 */settings.xml
 **.iml
 /elastic-apm-java/target/
