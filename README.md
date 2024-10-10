@@ -19,8 +19,6 @@ Cosmin's repo was forked into [https://github.com/jleemans/elastic-apm](https://
 the following modifications:
 - removed tutorials not related to elastic-apm
 - version upgrades:
-  - upgraded to JDK 17
-  - upgraded to Spring Boot 2.5.x
   - upgraded Lombok to 1.8.26 (to be JDK 17 compliant)
 
 # Building
@@ -35,14 +33,15 @@ Just run a `mvn package`, it should not give any issues.
 docker compose up -d
 ```
 
-You may have to explicitly restart the APM server (sometimes also the microservice), since they shut down if the containers that they
-depend on don't start up quick enough. Give it a bit of time before doing a:
+You may have to explicitly restart the APM server (sometimes also the microservice), since they shut down if the
+containers that they depend on don't start up quick enough. Give it a bit of time before doing a:
 
 ```
 docker compose restart apm
 ```
 
-A more robust docker setup can avoid this, but it's not a priority at the moment.
+A more robust docker setup can avoid this, but it's not a priority at the moment. For now, keep going until all
+containers are started successfully.
 
 # Sample requests
 
@@ -65,3 +64,8 @@ The script will:
   it will keep the original values.
 
 That should be enough to see data pop up in Elastic. Check the results in the [Kibana APM tab](http://localhost:5601/).
+
+# Features
+
+Check out [this feature overview](docs/features.md) to get an idea of what you can expect from Elastic APM. The best
+way is still to play around with this stack yourself.
